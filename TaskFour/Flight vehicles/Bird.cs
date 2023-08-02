@@ -1,11 +1,14 @@
-﻿namespace TaskFour
+﻿using TaskFour.Interfaces;
+
+namespace TaskFour
 {
     public class Bird : IFlyable
     {
         //bird cannot rise above 3 km
         private Coordinate currentPosition;
 
-        public Coordinate CurrentPosition { get { return currentPosition; } set { currentPosition = new Coordinate(value.X, value.Y < 3 ? value.Y : 3, value.Z); } }
+        public Coordinate CurrentPosition { get { return currentPosition; } set { currentPosition = 
+                    new Coordinate(value.X, value.Y < 3 ? value.Y : 3, value.Z); } }
 
         public Bird(Coordinate currentPosition)
         {
@@ -23,8 +26,11 @@
             {
                 Random random = new Random();
                 int speed = random.Next(0, 21);
-                double distance = Math.Sqrt(Math.Pow(newPosition.X - CurrentPosition.X, 2) + Math.Pow(newPosition.Y - CurrentPosition.Y, 2) + Math.Pow(newPosition.Z - CurrentPosition.Z, 2));
+                double distance = Math.Sqrt(Math.Pow(newPosition.X - CurrentPosition.X, 2) + 
+                    Math.Pow(newPosition.Y - CurrentPosition.Y, 2) + 
+                    Math.Pow(newPosition.Z - CurrentPosition.Z, 2));
                 double time = distance / speed;
+                Console.WriteLine("Bird time = " + time);
                 return time;
             }
             else

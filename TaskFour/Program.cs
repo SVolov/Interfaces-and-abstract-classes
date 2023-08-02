@@ -15,6 +15,6 @@ class Program
 
         Drone drone = new Drone(new Coordinate());
         drone.FlyTo(new Coordinate(200, 0, 10));
-        drone.GetFlyTime(new Coordinate(3200, 10, 600));
+        drone.GetFlyTime(new Coordinate(500, 10, 600));
     }
 }

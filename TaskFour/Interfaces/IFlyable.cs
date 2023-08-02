@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static Program;
 
-namespace TaskFour
+namespace TaskFour.Interfaces
 {
     public interface IFlyable
     {
